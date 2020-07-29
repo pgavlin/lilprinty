@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lil' printy</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/2.4.1/lodash.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.1.0/styles/github.min.css">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="container">
+        <h1>lil' printy</h1>
+    </div>
+    <div class="container full-height">
+      <div class="row full-height">
+        <div class="col-xs-6 full-height">
+          <textarea id="source" class="source full-height"># lil' printy
+-------------
+
+Hello from `lilprinty`!
+
+This is the printer we use:
+![Printer](https://cdn-shop.adafruit.com/1200x900/2752-07.jpg)
+
+Check the project out [here](https://github.com/pgavlin/lilprinty).
+</textarea>
+        </div>
+        <section class="col-xs-6 full-height">
+          <div class="preview full-height">
+            <img src="" id="preview" class="hidden" />
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="container">
+      <button id="print" type="button" class="btn btn-success">print!</button>
+    </div>
+  </body>
+</html>

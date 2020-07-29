@@ -1,0 +1,14 @@
+{
+    "proportionalFamily": {
+        "regular": "https://fonts.gstatic.com/s/ibmplexsans/v7/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2",
+        "italic": "https://fonts.gstatic.com/s/ibmplexsans/v7/zYX-KVElMYYaJe8bpLHnCwDKhdTuF6ZJW9XjDg.woff2",
+        "bold": "https://fonts.gstatic.com/s/ibmplexsans/v7/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdP3pBms.woff2",
+        "boldItalic": "https://fonts.gstatic.com/s/ibmplexsans/v7/zYX7KVElMYYaJe8bpLHnCwDKhdTmrINcdvfuJGl18Q.woff2"
+    },
+    "monospaceFamily": {
+        "regular": "https://fonts.gstatic.com/s/ibmplexmono/v5/-F63fjptAgt5VM-kVkqdyU8n1i8q131nj-o.woff2",
+        "italic": "https://fonts.gstatic.com/s/ibmplexmono/v5/-F6pfjptAgt5VM-kVkqdyU8n1ioa1XdgregdFA.woff2",
+        "bold": "https://fonts.gstatic.com/s/ibmplexmono/v5/-F6qfjptAgt5VM-kVkqdyU8n3pQPwlBFgsAXHNk.woff2",
+        "boldItalic": "https://fonts.gstatic.com/s/ibmplexmono/v5/-F6sfjptAgt5VM-kVkqdyU8n1ioSblJ1gMoQPttozw.woff2"
+    }
+}
