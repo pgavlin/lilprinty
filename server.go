@@ -8,8 +8,8 @@ import (
 	"net/http"
 
 	"github.com/pgavlin/lilprinty/internal/bitmap"
+	"github.com/pgavlin/lilprinty/internal/markdown"
 	"github.com/pgavlin/lilprinty/internal/printer"
-	"github.com/pgavlin/lilprinty/internal/renderer"
 )
 
 type server struct {
@@ -37,7 +37,7 @@ func (s *server) handlePrint(w http.ResponseWriter, req *http.Request) {
 		device = &preview
 	}
 
-	if err = renderer.RenderMarkdown(device, contents, s.defaultStyle.proportionalFamily, s.defaultStyle.monospaceFamily, s.defaultStyle.headingStyles, s.defaultStyle.paragraphStyle); err != nil {
+	if err = markdown.Render(device, contents, s.defaultStyle.proportionalFamily, s.defaultStyle.monospaceFamily, s.defaultStyle.headingStyles, s.defaultStyle.paragraphStyle); err != nil {
 		log.Printf("error rendering content: %v", err)
 		w.WriteHeader(http.StatusInternalServerError)
 		return

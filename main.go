@@ -10,8 +10,8 @@ import (
 
 	"github.com/tarm/serial"
 
+	"github.com/pgavlin/lilprinty/internal/markdown"
 	"github.com/pgavlin/lilprinty/internal/printer"
-	"github.com/pgavlin/lilprinty/internal/renderer"
 )
 
 func main() {
@@ -52,7 +52,7 @@ func main() {
 		if err != nil {
 			log.Fatalf("error reading '%v': %v", filePath, err)
 		}
-		if err = renderer.RenderMarkdown(printer.New(w), bytes, style.proportionalFamily, style.monospaceFamily, style.headingStyles, style.paragraphStyle); err != nil {
+		if err = markdown.Render(printer.New(w), bytes, style.proportionalFamily, style.monospaceFamily, style.headingStyles, style.paragraphStyle); err != nil {
 			log.Fatalf("error rendering document: %v", err)
 		}
 	} else {

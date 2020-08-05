@@ -17,7 +17,7 @@ import (
 	"golang.org/x/image/font/gofont/goregular"
 
 	"github.com/pgavlin/lilprinty/internal/font"
-	"github.com/pgavlin/lilprinty/internal/renderer"
+	"github.com/pgavlin/lilprinty/internal/markdown"
 	"github.com/pgavlin/lilprinty/internal/util"
 )
 
@@ -44,8 +44,8 @@ type styleSheet struct {
 type style struct {
 	proportionalFamily *font.Family
 	monospaceFamily    *font.Family
-	headingStyles      []renderer.BlockStyle
-	paragraphStyle     renderer.BlockStyle
+	headingStyles      []markdown.BlockStyle
+	paragraphStyle     markdown.BlockStyle
 }
 
 func mustParseFontFamily(regular, bold, italic, boldItalic []byte, options truetype.Options) *font.Family {
@@ -61,13 +61,13 @@ var fontOptions = truetype.Options{DPI: 203.2, SubPixelsX: 1}
 var defaultStyle = style{
 	proportionalFamily: mustParseFontFamily(goregular.TTF, gobold.TTF, goitalic.TTF, gobolditalic.TTF, fontOptions),
 	monospaceFamily:    mustParseFontFamily(gomono.TTF, gomonobold.TTF, gomonoitalic.TTF, gomonobolditalic.TTF, fontOptions),
-	headingStyles: []renderer.BlockStyle{
+	headingStyles: []markdown.BlockStyle{
 		{PointSize: 16.0, TopMargin: 3.2, BottomMargin: 1.6},
 		{PointSize: 14.0, TopMargin: 2.8, BottomMargin: 1.4},
 		{PointSize: 12.0, TopMargin: 2.4, BottomMargin: 1.2},
 		{PointSize: 10.0, TopMargin: 2.0, BottomMargin: 1.0},
 	},
-	paragraphStyle: renderer.BlockStyle{PointSize: 8.0, TopMargin: 1.6, BottomMargin: 0.8},
+	paragraphStyle: markdown.BlockStyle{PointSize: 8.0, TopMargin: 1.6, BottomMargin: 0.8},
 }
 
 func loadTTF(url string) ([]byte, error) {
@@ -114,8 +114,8 @@ func loadFontFamily(family *fontFamily, defaults *font.Family) (*font.Family, er
 	return font.ParseFamily(regular, bold, italic, boldItalic, fontOptions)
 }
 
-func loadBlockStyle(style blockStyle) renderer.BlockStyle {
-	result := renderer.BlockStyle{
+func loadBlockStyle(style blockStyle) markdown.BlockStyle {
+	result := markdown.BlockStyle{
 		PointSize:    style.PointSize,
 		TopMargin:    style.TopMargin,
 		BottomMargin: style.BottomMargin,
@@ -156,7 +156,7 @@ func loadStylesheet(path string) (style, error) {
 
 	headingStyles := defaultStyle.headingStyles
 	if len(sheet.HeadingStyles) > 0 {
-		headingStyles = make([]renderer.BlockStyle, len(sheet.HeadingStyles))
+		headingStyles = make([]markdown.BlockStyle, len(sheet.HeadingStyles))
 		for i, s := range sheet.HeadingStyles {
 			headingStyles[i] = loadBlockStyle(s)
 		}
