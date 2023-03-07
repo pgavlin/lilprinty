@@ -10,6 +10,5 @@ require (
 	github.com/pgavlin/goldmark v1.1.33-0.20200623023139-dabfbc1a1cb4
 	github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07
 	github.com/tdewolff/canvas v0.0.0-20200724172439-782f5aeffdf8
-	golang.org/x/exp v0.0.0-20200513190911-00229845015e
-	golang.org/x/image v0.0.0-20200618115811-c13761719519
+	golang.org/x/image v0.5.0
 )
